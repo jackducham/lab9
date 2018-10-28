@@ -1,0 +1,17 @@
+*.qsf
+
+*.bak
+
+*.done
+*.jdi
+*.smsg
+*.rpt
+*.ppf
+*.qip
+*.v
+*.qdf
+*.cdf
+*.pin
+*.qpf
+*.sld
+*.qws

@@ -71,6 +71,46 @@ void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int 
 	// Implement this function
 }
 
+void sub_bytes(unsigned char * in)
+{
+	for(int i = 0; i < 16; i++){
+		unsigned char x = *in;
+		int first = (int) x[1];
+		int last = (int) x[0];
+		int index = first * 16 + last;
+		*in = aes_sbox[index];
+		in++;
+	}
+}
+
+void shift_rows(unsigned char * in)
+{
+	for(int i = 1; i < 4; i++){
+		unsigned char x0 = *(in + (i * 4) + 0);
+		unsigned char x1 = *(in + (i * 4) + 1);
+		unsigned char x2 = *(in + (i * 4) + 2);
+		unsigned char x3 = *(in + (i * 4) + 3);
+		if(i == 1){
+			*(in + (i * 4) + 0) = x1;
+			*(in + (i * 4) + 1) = x2;
+			*(in + (i * 4) + 2) = x3;
+			*(in + (i * 4) + 3) = x0;
+		}
+		else if(i == 2){
+			*(in + (i * 4) + 0) = x2;
+			*(in + (i * 4) + 1) = x3;
+			*(in + (i * 4) + 2) = x0;
+			*(in + (i * 4) + 3) = x1;
+		}
+		else if(i == 3){
+			*(in + (i * 4) + 0) = x3;
+			*(in + (i * 4) + 1) = x0;
+			*(in + (i * 4) + 2) = x1;
+			*(in + (i * 4) + 3) = x2;
+		}
+	}
+}
+
 /** decrypt
  *  Perform AES decryption in hardware.
  *

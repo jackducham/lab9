@@ -29,7 +29,7 @@ module reg_file
 	register32 AES_DONE(.Clk(Clk),.Reset(Reset),.Load(LD_REG15),.D(INPUT),.Data_Out(reg15));
 	
 	mux16 OUTPUT_SELECT(.d0(reg0),.d1(reg1),.d2(reg2),.d3(reg3),.d4(reg4),.d5(reg5),.d6(reg6),.d7(reg7),.d8(reg8),.d9(reg9),
-							  .d10(reg10),.d11(reg11),.d12(reg12),.d13(reg13),.d14(reg14),.d15(reg15),.s(ADDR),.y(OUTPUT))
+							  .d10(reg10),.d11(reg11),.d12(reg12),.d13(reg13),.d14(reg14),.d15(reg15),.s(ADDR),.y(OUTPUT));
 	
 	assign out_en_first = reg4[31:16];
 	assign out_en_last = reg7[15:0];

@@ -86,27 +86,27 @@ void sub_bytes(unsigned char * in)
 void shift_rows(unsigned char * in)
 {
 	for(int i = 1; i < 4; i++){
-		unsigned char x0 = *(in + (i * 4) + 0);
-		unsigned char x1 = *(in + (i * 4) + 1);
-		unsigned char x2 = *(in + (i * 4) + 2);
-		unsigned char x3 = *(in + (i * 4) + 3);
+		unsigned char x0 = *(in + (0 * 4) + i);
+		unsigned char x1 = *(in + (1 * 4) + i);
+		unsigned char x2 = *(in + (2 * 4) + i);
+		unsigned char x3 = *(in + (3 * 4) + i);
 		if(i == 1){
-			*(in + (i * 4) + 0) = x1;
-			*(in + (i * 4) + 1) = x2;
-			*(in + (i * 4) + 2) = x3;
-			*(in + (i * 4) + 3) = x0;
+			*(in + (0 * 4) + i) = x1;
+			*(in + (1 * 4) + i) = x2;
+			*(in + (2 * 4) + i) = x3;
+			*(in + (3 * 4) + i) = x0;
 		}
 		else if(i == 2){
-			*(in + (i * 4) + 0) = x2;
-			*(in + (i * 4) + 1) = x3;
-			*(in + (i * 4) + 2) = x0;
-			*(in + (i * 4) + 3) = x1;
+			*(in + (0 * 4) + i) = x2;
+			*(in + (1 * 4) + i) = x3;
+			*(in + (2 * 4) + i) = x0;
+			*(in + (3 * 4) + i) = x1;
 		}
 		else if(i == 3){
-			*(in + (i * 4) + 0) = x3;
-			*(in + (i * 4) + 1) = x0;
-			*(in + (i * 4) + 2) = x1;
-			*(in + (i * 4) + 3) = x2;
+			*(in + (0 * 4) + i) = x3;
+			*(in + (1 * 4) + i) = x0;
+			*(in + (2 * 4) + i) = x1;
+			*(in + (3 * 4) + i) = x2;
 		}
 	}
 }

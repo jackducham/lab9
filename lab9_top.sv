@@ -44,7 +44,7 @@ lab9_soc lab9_qsystem (
 		       // Reset kay
 		       .reset_reset_n(KEY[0]),
 		       // Exported data
-		       .aes_export_EXPORT_DATA(AES_EXPORT_DATA),
+		       .aes_export_export_data(AES_EXPORT_DATA),
 		       // sdram_wire.addr
 		       .sdram_wire_addr(DRAM_ADDR),
 		       // sdram_wire.ba

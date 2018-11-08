@@ -27,7 +27,7 @@ module lab9_top (
 		 output logic 	     DRAM_CAS_N,
 		 output logic 	     DRAM_CKE,
 		 output logic 	     DRAM_CS_N,
-		 inout logic [31:0]  DRAM_DQ,
+		 inout wire [31:0]  DRAM_DQ,
 		 output logic [3:0]  DRAM_DQM,
 		 output logic 	     DRAM_RAS_N,
 		 output logic 	     DRAM_WE_N,

@@ -38,47 +38,52 @@ module avalon_aes_interface (
 	output logic [31:0] EXPORT_DATA		// Exported Conduit Signal to LEDs
 );
 
-logic [31:0] in,out;
-
-reg_file AES_REG_FILE(.Clk(CLK),.Reset(RESET),.LD_REG(AVL_CS && AVL_WRITE),.ADDR(AVL_ADDR),
-							 .INPUT(in),.out_en_first(EXPORT_DATA[31:16]),.out_en_last(EXPORT_DATA[15:0]),.OUTPUT(out));
+logic [31:0] reg_file [0:15];
  
 always_ff @ (posedge CLK)
 begin
+
     if(RESET)
     begin
-			AVL_READDATA <= {32{1'b0}};
-			in <= {32{1'b0}};
+			reg_file[0] <= {32{1'b0}};
+			reg_file[1] <= {32{1'b0}};
+			reg_file[2] <= {32{1'b0}};
+			reg_file[3] <= {32{1'b0}};
+			reg_file[4] <= {32{1'b0}};
+			reg_file[5] <= {32{1'b0}};
+			reg_file[6] <= {32{1'b0}};
+			reg_file[7] <= {32{1'b0}};
+			reg_file[8] <= {32{1'b0}};
+			reg_file[9] <= {32{1'b0}};
+			reg_file[10] <= {32{1'b0}};
+			reg_file[11] <= {32{1'b0}};
+			reg_file[12] <= {32{1'b0}};
+			reg_file[13] <= {32{1'b0}};
+			reg_file[14] <= {32{1'b0}};
+			reg_file[15] <= {32{1'b0}};
     end
 	 
-    else
+   else
     begin
-	 
-		if(AVL_CS && AVL_READ)
-		begin
-			AVL_READDATA <= out;
-		end
 		
-		else if(AVL_CS && AVL_WRITE)
+		if(AVL_CS && AVL_WRITE)
 		begin
 			case(AVL_BYTE_EN)
-				4'b1111: in <= AVL_WRITEDATA;
-				4'b1100: in <= {AVL_WRITEDATA[31:16],16'hz};
-				4'b0011: in <= {16'hz,AVL_WRITEDATA[15:0]};
-				4'b1000: in <= {AVL_WRITEDATA[31:24],24'hz};
-				4'b0100: in <= {8'hz,AVL_WRITEDATA[23:16],16'hz};
-				4'b0010: in <= {16'hz,AVL_WRITEDATA[15:8],8'hz};
-				4'b0001: in <= {24'hz,AVL_WRITEDATA[7:0]};
-				default: in <= 32'hz;
+				4'b1111: reg_file[AVL_ADDR] <= AVL_WRITEDATA;
+				4'b1100: reg_file[AVL_ADDR][31:16] <= AVL_WRITEDATA[31:16];
+				4'b0011: reg_file[AVL_ADDR][15:0] <= AVL_WRITEDATA[15:0];
+				4'b1000: reg_file[AVL_ADDR][31:24] <= AVL_WRITEDATA[31:24];
+				4'b0100: reg_file[AVL_ADDR][23:16] <= AVL_WRITEDATA[23:16];
+				4'b0010: reg_file[AVL_ADDR][15:8] <= AVL_WRITEDATA[15:8];
+				4'b0001: reg_file[AVL_ADDR][7:0] <= AVL_WRITEDATA[7:0];
+				default: ;
 			endcase
 		end
-		
-		else
-		begin
-			AVL_READDATA <= {32{1'b0}};
-		end
-		
     end
 end
+
+assign EXPORT_DATA[31:16] = reg_file[4][31:16];
+assign EXPORT_DATA[15:0] = reg_file[7][15:0];
+assign AVL_READDATA = (AVL_CS && AVL_READ) ? reg_file[AVL_ADDR] : {32{1'b0}};
 
 endmodule

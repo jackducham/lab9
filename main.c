@@ -379,7 +379,7 @@ int main()
 	  /* Continuously Perform Encryption and Decryption */
 	  while (1) {
 	       int i = 0;
-	       msg_ascii[0] = 'e';
+	   /*    msg_ascii[0] = 'e';
 	       msg_ascii[1] = 'c';
 	       msg_ascii[2] = 'e';
 	       msg_ascii[3] = '2';
@@ -411,9 +411,9 @@ int main()
 	       msg_ascii[29] = '8';
 	       msg_ascii[30] = 'd';
 	       msg_ascii[31] = 'c';
-	       msg_ascii[32] = '\0';
-	       //printf("\nEnter Message:\n");
-	       key_ascii[0] = '0';
+	       msg_ascii[32] = '\0';*/
+	       printf("\nEnter Message:\n");
+	 /*      key_ascii[0] = '0';
 	       key_ascii[1] = '0';
 	       key_ascii[2] = '0';
 	       key_ascii[3] = '1';
@@ -445,12 +445,12 @@ int main()
 	       key_ascii[29] = 'e';
 	       key_ascii[30] = '0';
 	       key_ascii[31] = 'f';
-	       key_ascii[32] = '\0';
-	       //scanf("%s", msg_ascii);
-	       //printf("\n");
-	       //printf("\nEnter Key:\n");
-	       //scanf("%s", key_ascii);
-	       //printf("\n");
+	       key_ascii[32] = '\0';*/
+	       scanf("%s", msg_ascii);
+	       printf("\n");
+	       printf("\nEnter Key:\n");
+	       scanf("%s", key_ascii);
+	       printf("\n");
 	       printf("\nmsg_ascii:\n");
 	       printf("%s", msg_ascii);
 	       printf("\nkey_ascii:\n");

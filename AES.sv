@@ -32,7 +32,7 @@ module AES (
 							s161,s162,s163,s164,s165,s166,s167,s168,s169,s170,s171,s172,s173,s174,s175,s176,s177,s178,s179,s180,
 							s181,s182,s183,s184,s185,s186,s187,s188,s189,s190,s191,s192,s193,s194,s195,s196,s197,s198,s199,s200,
 							s201,s202,s203,s204,s205,s206,s207,s208,s209,s210,s211,s212,s213,s214,s215,s216,s217,
-							DONE}, curr_state, next_state;
+							DONE} curr_state, next_state;
 
 	assign invSRin = {128{1'b0}};
 	assign key = {128{1'b0}};
@@ -48,7 +48,7 @@ module AES (
 always_ff @ (posedge CLK)  
 begin
 	if (RESET)
-		curr_state <= s0;
+		curr_state <= WAIT;
    else 
 		curr_state <= next_state;
 end
@@ -304,7 +304,7 @@ begin
 				s3:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s4:
 				begin
@@ -414,7 +414,7 @@ begin
 				s24:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s26:
 				begin
@@ -524,7 +524,7 @@ begin
 				s47:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s48:
 				begin
@@ -634,7 +634,7 @@ begin
 				s69:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s70:
 				begin
@@ -744,7 +744,7 @@ begin
 				s91:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s92:
 				begin
@@ -854,7 +854,7 @@ begin
 				s113:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s114:
 				begin
@@ -964,7 +964,7 @@ begin
 				s135:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s136:
 				begin
@@ -1074,7 +1074,7 @@ begin
 				s157:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s158:
 				begin
@@ -1184,7 +1184,7 @@ begin
 				s179:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s180:
 				begin
@@ -1294,7 +1294,7 @@ begin
 				s201:
 				begin
 					isb = msg[15:8];
-					msg[15:8 = osb;
+					msg[15:8] = osb;
 				end
 				s202:
 				begin
@@ -1376,9 +1376,9 @@ begin
 					AES_MSG_DEC = msg;
 				end
 				DONE:
-				begin:
+				begin
 					AES_DONE = 1'b1;
-				end:
+				end
             default:
             begin
 					AES_DONE = 1'b0;

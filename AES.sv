@@ -196,43 +196,683 @@ begin
             end
 				s19:
 				begin
-					
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s20:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s21: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s22:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s23:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s24:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s24:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s26:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
+				end
+				s27:
+				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
+				end
+				s28:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
+				s29:
+				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
+				end
+				s30:
+				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
+				end
+				s31:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
+				end
+				s32:
+				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
+				end
+				s33:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
+				s34:
+				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
+				end
+				s35:
+				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
+				end
+				s36:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
+				s37:
+				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
+				end
+				s38:
+				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s39:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s40: 
+            begin
+					key = key_schedule[1151:1024];
+					msg = msg ^ key;
+            end
+				s41:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s42:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s43: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s44:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s45:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s46:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s47:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s48:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
+				end
+				s49:
+				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
+				end
+				s50:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
+				s51:
+				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
+				end
+				s52:
+				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
+				end
+				s53:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
+				end
+				s54:
+				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
+				end
+				s55:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
+				s56:
+				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
+				end
+				s57:
+				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
+				end
+				s58:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
+				s59:
+				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
+				end
+				s60:
+				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s61:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s62: 
+            begin
+					key = key_schedule[1023:896];
+					msg = msg ^ key;
+            end
+				s63:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s64:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s65: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s66:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s67:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s68:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s69:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s70:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
+				end
+				s71:
+				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
+				end
+				s72:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
+				s73:
+				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
+				end
+				s74:
+				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
+				end
+				s75:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
+				end
+				s76:
+				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
+				end
+				s77:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
+				s78:
+				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
+				end
+				s79:
+				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
+				end
+				s80:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
+				s81:
+				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
+				end
+				s82:
+				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s83:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s84: 
+            begin
+					key = key_schedule[895:768];
+					msg = msg ^ key;
+            end
+				s85:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s86:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s87: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s88:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s89:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s90:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s91:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s92:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
+				end
+				s93:
+				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
+				end
+				s94:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
+				s95:
+				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
+				end
+				s96:
+				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
+				end
+				s97:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
+				end
+				s98:
+				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
+				end
+				s99:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
+				s100:
+				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
+				end
+				s101:
+				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
+				end
+				s102:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
+				s103:
+				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
+				end
+				s104:
+				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s105:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s106: 
+            begin
+					key = key_schedule[767:640];
+					msg = msg ^ key;
+            end
+				s107:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s108:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s109: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s110:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s111:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s112:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s113:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s114:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
+				end
+				s115:
+				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
+				end
+				s116:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
+				s117:
+				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
+				end
+				s118:
+				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
+				end
+				s119:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
+				end
+				s120:
+				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
+				end
+				s121:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
+				s122:
+				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
+				end
+				s123:
+				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
+				end
+				s124:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
+				s125:
+				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
+				end
+				s126:
+				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s127:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s128: 
+            begin
+					key = key_schedule[639:512];
+					msg = msg ^ key;
+            end
+				s129:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s130:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s131: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s132:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
+				end
+				s1:
+            begin
+					invSRin = msg;
+					msg = invSRout;
+				end
+				s2:
+				begin
+					isb = msg[7:0];
+					msg[7:0] = osb;
+				end
+				s3:
+				begin
+					isb = msg[15:8];
+					msg[15:8 = osb;
+				end
+				s4:
+				begin
+					isb = msg[23:16];
+					msg[23:16] = osb;
 				end
 				s5:
 				begin
+					isb = msg[31:24];
+					msg[31:24] = osb;
 				end
-				s6: 
-            begin
-            end
+				s6:
+				begin
+					isb = msg[39:32];
+					msg[39:32] = osb;
+				end
 				s7:
 				begin
+					isb = msg[47:40];
+					msg[47:40] = osb;
 				end
 				s8:
 				begin
+					isb = msg[55:48];
+					msg[55:48] = osb;
 				end
-            s9:
-            begin
+				s9:
+				begin
+					isb = msg[63:56];
+					msg[63:56] = osb;
 				end
 				s10:
 				begin
+					isb = msg[71:64];
+					msg[71:64] = osb;
 				end
-				s11: 
-            begin
-            end
+				s11:
+				begin
+					isb = msg[79:72];
+					msg[79:72] = osb;
+				end
 				s12:
 				begin
+					isb = msg[87:80];
+					msg[87:80] = osb;
 				end
 				s13:
 				begin
+					isb = msg[95:88];
+					msg[95:88] = osb;
 				end
-				s14: 
-            begin
-            end
+				s14:
+				begin
+					isb = msg[103:96];
+					msg[103:96] = osb;
+				end
 				s15:
 				begin
+					isb = msg[111:104];
+					msg[111:104] = osb;
 				end
 				s16:
 				begin
+					isb = msg[119:112];
+					msg[119:112] = osb;
+				end
+				s17:
+				begin
+					isb = msg[127:120];
+					msg[127:120] = osb;
+				end
+				s18: 
+            begin
+					key = key_schedule[1279:1152];
+					msg = msg ^ key;
+            end
+				s19:
+				begin
+					imc = msg[31:0];
+					msg[31:0] = omc;
+				end
+				s20:
+				begin
+					imc = msg[63:32];
+					msg[63:32] = omc;
+				end
+				s21: 
+            begin
+					imc = msg[95:64];
+					msg[95:64] = omc;
+            end
+				s22:
+				begin
+					imc = msg[127:96];
+					msg[127:96] = omc;
 				end
             default:
             begin

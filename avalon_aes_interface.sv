@@ -39,7 +39,12 @@ module avalon_aes_interface (
 );
 
 logic [31:0] reg_file [0:15];
- 
+
+AES decryption_module(.CLK(CLK),.RESET(RESET),.AES_START(reg_file[14][0]),.AES_DONE(reg_file[15][0]),
+					.AES_KEY({reg_file[0],reg_file[1],reg_file[2],reg_file[3]}),
+					.AES_MSG_ENC({reg_file[4],reg_file[5],reg_file[6],reg_file[7]}),
+					.AES_MSG_DEC({reg_file[8],reg_file[9],reg_file[10],reg_file[11]}));
+
 always_ff @ (posedge CLK)
 begin
 
